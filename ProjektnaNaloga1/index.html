@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="sl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prijava · GitHub</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+  <main class="authentication">
+    <img src="images/httpsuxwing.comgithub-icon.png" alt="GitHub logo" class="logo">
+
+    <h1 id="form-title">Prijava v GitHub</h1>
+
+    <form action="#" method="post" id="auth-form">
+      <div class="form-group">
+        <label for="username">Uporabniško ime ali e-pošta</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+
+      <div class="form-group">
+        <div class="password-label">
+          <label for="password">Geslo</label>
+          <a href="#" id="forgot-password">Pozabljeno geslo?</a>
+        </div>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <div class="form-group" id="email-group" hidden>
+        <label for="email">E-poštni naslov</label>
+        <input type="email" id="email" name="email">
+      </div>
+
+      <button type="submit" id="submit-button">Prijava</button>
+    </form>
+
+    <p class="switch-text">
+      <span id="switch-question">Še nimaš računa?</span>
+      <a href="#" id="switch-form">Ustvari račun</a>
+    </p>
+  </main>
+
+  <script>
+    (() => {
+      const demoUsername = "student";
+      const demoPassword = "Pass1234!";
+
+      const form = document.getElementById("auth-form");
+      const title = document.getElementById("form-title");
+      const usernameLabel = document.querySelector('label[for="username"]');
+      const emailGroup = document.getElementById("email-group");
+      const emailInput = document.getElementById("email");
+      const button = document.getElementById("submit-button");
+      const question = document.getElementById("switch-question");
+      const switchLink = document.getElementById("switch-form");
+      const forgotLink = document.getElementById("forgot-password");
+
+      let registering = false;
+
+      function setRegistrationMode(enabled) {
+        registering = enabled;
+        form.reset();
+
+        title.textContent = registering ? "Ustvari račun" : "Prijava v GitHub";
+        usernameLabel.textContent = "Uporabniško ime";
+        button.textContent = registering ? "Registracija" : "Prijava";
+        question.textContent = registering ? "Že imaš račun?" : "Še nimaš računa?";
+        switchLink.textContent = registering ? "Prijavi se" : "Ustvari račun";
+        emailGroup.hidden = !registering;
+        emailInput.required = registering;
+        forgotLink.hidden = registering;
+      }
+
+      switchLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        setRegistrationMode(!registering);
+      });
+
+      forgotLink.addEventListener("click", (event) => {
+        event.preventDefault();
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        if (registering) {
+          alert("Registracija uspešna! Zdaj se lahko prijaviš.");
+          setRegistrationMode(false);
+          return;
+        }
+
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value;
+
+        if (username === demoUsername && password === demoPassword) {
+          alert("Prijava uspešna!");
+        } else {
+          alert("Prijava ni uspela. Preveri uporabniško ime in geslo.");
+        }
+      });
+
+      setRegistrationMode(false);
+    })();
+  </script>
+</body>
+
+</html>
