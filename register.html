@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ustvari račun · GitHub</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+  <main class="authentication">
+    <img
+      src="images/httpsuxwing.comgithub-icon.png"
+      alt="GitHub logo"
+      class="logo"
+    >
+
+    <h1>Ustvari račun</h1>
+
+    <form id="registration-form">
+      <div class="form-group">
+        <label for="username">Uporabniško ime</label>
+        <input type="text" id="username" name="username" minlength="3" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-poštni naslov</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Geslo</label>
+        <input type="password" id="password" name="password" minlength="8" required>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm-password">Ponovi geslo</label>
+        <input
+          type="password"
+          id="confirm-password"
+          name="confirm-password"
+          minlength="8"
+          required
+        >
+      </div>
+
+      <button type="submit">Ustvari račun</button>
+    </form>
+
+    <p class="switch-text">
+      Že imaš račun? <a href="index.html">Prijavi se</a>
+    </p>
+  </main>
+
+  <script>
+    const form = document.getElementById("registration-form");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirm-password").value;
+
+      if (password !== confirmPassword) {
+        alert("Gesli se ne ujemata.");
+        return;
+      }
+
+      alert("Registracija uspešna! Zdaj se lahko prijaviš.");
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
