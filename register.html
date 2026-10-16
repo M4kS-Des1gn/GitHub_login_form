@@ -1,73 +1,134 @@
 <!DOCTYPE html>
-<html lang="sl">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ustvari račun · GitHub</title>
+  <title>Create your free account · GitHub</title>
   <link rel="stylesheet" href="CSS/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<body>
-  <main class="authentication">
-    <img
-      src="images/httpsuxwing.comgithub-icon.png"
-      alt="GitHub logo"
-      class="logo"
-    >
+<body class="register-page">
+  <main class="registration-layout">
+    <section class="registration-intro" aria-labelledby="intro-title">
+      <div class="intro-content">
+        <h1 id="intro-title">Create your free account</h1>
+        <p class="intro-lead">Explore GitHub's core features for individuals and organizations.</p>
+        <p class="included-heading">See what's included <span aria-hidden="true">⌃</span></p>
 
-    <h1>Ustvari račun</h1>
-
-    <form id="registration-form">
-      <div class="form-group">
-        <label for="username">Uporabniško ime</label>
-        <input type="text" id="username" name="username" minlength="3" required>
+        <ul class="benefit-list">
+          <li>
+            <strong>Access to GitHub Copilot</strong>
+            <span>Increase your productivity and accelerate software development.</span>
+          </li>
+          <li>
+            <strong>Unlimited repositories</strong>
+            <span>Collaborate securely on public and private projects.</span>
+          </li>
+          <li>
+            <strong>Integrated code reviews</strong>
+            <span>Boost code quality with built-in review tools.</span>
+          </li>
+          <li>
+            <strong>Automated workflows</strong>
+            <span>Save time with CI/CD integrations and GitHub Actions.</span>
+          </li>
+          <li>
+            <strong>Community support</strong>
+            <span>Connect with developers worldwide for instant feedback and insights.</span>
+          </li>
+        </ul>
       </div>
 
-      <div class="form-group">
-        <label for="email">E-poštni naslov</label>
-        <input type="email" id="email" name="email" required>
+      <div class="space-art" aria-hidden="true">
+        <span class="art-star star-one">✦</span>
+        <span class="art-star star-two">✧</span>
+        <span class="art-star star-three">✦</span>
+        <div class="art-creature art-creature-pink"><span></span></div>
+        <div class="art-creature art-creature-blue"><span></span></div>
+        <div class="art-creature art-creature-yellow"><span></span></div>
       </div>
+    </section>
 
-      <div class="form-group">
-        <label for="password">Geslo</label>
-        <input type="password" id="password" name="password" minlength="8" required>
+    <section class="registration-panel" aria-label="Create your GitHub account">
+      <p class="signin-prompt">Already have an account? <a href="login.html">Sign in <span aria-hidden="true">→</span></a></p>
+
+      <div class="registration-content">
+        <h2>Sign up for GitHub</h2>
+
+        <div class="social-login">
+          <button type="button" class="social-button">
+            <span class="google-mark" aria-hidden="true">G</span>
+            Continue with Google
+          </button>
+          <button type="button" class="social-button">
+            <img src="images/apple.png" alt="">
+            Continue with Apple
+          </button>
+          <div class="social-divider"><span>or</span></div>
+        </div>
+
+        <form id="registration-form">
+          <div class="form-group">
+            <label for="email">Email<span class="required-mark" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" placeholder="Email" autocomplete="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password<span class="required-mark" aria-hidden="true">*</span></label>
+            <input type="password" id="password" name="password" placeholder="Password" autocomplete="new-password" minlength="8" required>
+            <p class="field-hint">Password should be at least 15 characters OR at least 8 characters including a number and a lowercase letter.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="username">Username<span class="required-mark" aria-hidden="true">*</span></label>
+            <input type="text" id="username" name="username" placeholder="Username" autocomplete="username" pattern="[A-Za-z0-9]+(-[A-Za-z0-9]+)*" required>
+            <p class="field-hint">Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="country">Your Country/Region<span class="required-mark" aria-hidden="true">*</span></label>
+            <select id="country" name="country" required>
+              <option value="Slovenia" selected>Slovenia</option>
+              <option value="United States">United States</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Canada">Canada</option>
+              <option value="Germany">Germany</option>
+              <option value="France">France</option>
+              <option value="Italy">Italy</option>
+              <option value="Other">Other</option>
+            </select>
+            <p class="field-hint">For compliance reasons, we're required to collect country information to send you occasional updates and announcements.</p>
+          </div>
+
+          <fieldset class="email-preferences">
+            <legend>Email preferences</legend>
+            <label class="checkbox-label" for="product-updates">
+              <input type="checkbox" id="product-updates" name="product-updates">
+              Receive occasional product updates and announcements
+            </label>
+          </fieldset>
+
+          <button type="submit" class="create-account-button">Create account <span aria-hidden="true">›</span></button>
+        </form>
+
+        <p class="terms-copy">By creating an account, you agree to the <a href="#">Terms of Service</a>. For more information about GitHub's privacy practices, see the <a href="#">GitHub Privacy Statement</a>. We'll occasionally send you account-related emails.</p>
       </div>
-
-      <div class="form-group">
-        <label for="confirm-password">Ponovi geslo</label>
-        <input
-          type="password"
-          id="confirm-password"
-          name="confirm-password"
-          minlength="8"
-          required
-        >
-      </div>
-
-      <button type="submit">Ustvari račun</button>
-    </form>
-
-    <p class="switch-text">
-      Že imaš račun? <a href="index.html">Prijavi se</a>
-    </p>
+    </section>
   </main>
 
   <script>
-    const form = document.getElementById("registration-form");
-
-    form.addEventListener("submit", (event) => {
+    document.getElementById("registration-form").onsubmit = event => {
       event.preventDefault();
 
       const password = document.getElementById("password").value;
-      const confirmPassword = document.getElementById("confirm-password").value;
-
-      if (password !== confirmPassword) {
-        alert("Gesli se ne ujemata.");
+      if (password.length < 15 && !(password.length >= 8 && /\d/.test(password) && /[a-z]/.test(password))) {
+        Swal.fire("Choose a password that meets the requirements shown above.");
         return;
       }
 
-      alert("Registracija uspešna! Zdaj se lahko prijaviš.");
-      window.location.href = "index.html";
-    });
+      Swal.fire("Registration successful! You can now sign in.");
+      window.location.href = "login.html";
+    };
   </script>
 </body>
 </html>
