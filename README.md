@@ -1,47 +1,69 @@
-# GitHub Login & Registration Page
+# GitHub Login & Registration Demo
 
-A responsive website that recreates the appearance of GitHub's login and registration pages using HTML, CSS, and JavaScript. The project demonstrates form design, input validation, basic authentication logic, and user feedback.
+A responsive front-end website inspired by GitHub's login and registration pages. The project includes a demonstration notice, a login page, and a registration page, using HTML, CSS, and JavaScript.
+
+**Note:** This is an unofficial educational project and is not affiliated with GitHub.
 
 ## Features
 
-### Login Page (`login.html`)
-- Username or email and password input fields.
+### 1. Demo Notice (`index.html`)
+- Displays a notice explaining that the website is an unofficial copy.
+- Includes the GitHub logo and a custom-styled information card.
+- Provides navigation links to the login and registration pages.
+- Uses a highlighted notice label and accessible navigation.
+
+<img width="1920" height="951" alt="image" src="https://github.com/user-attachments/assets/b08ac7d1-eda9-49e4-9038-704c2d3593df" />
+
+
+
+### 2. Login Page (`login.html`)
+- Username or email and password fields.
 - Required-field validation.
 - Basic login verification using JavaScript.
-- Success and error messages displayed with SweetAlert2.
+- Success and error notifications using SweetAlert2.
 - Links to the registration page and a placeholder for password recovery.
-- Buttons for Google and Apple sign-in (visual demonstration only).
+- Google and Apple sign-in buttons for visual demonstration.
 
-### Registration Page (`register.html`)
+**Test credentials:**
+- Username: `student`
+- Password: `Pass1234!`
+
+<img width="1920" height="949" alt="image" src="https://github.com/user-attachments/assets/d8317246-2064-4eb3-a747-5171d09ebf00" />
+
+
+### 3. Registration Page (`register.html`)
 - Email, password, username, and country selection fields.
-- Password validation:
-  - At least 15 characters, or
-  - At least 8 characters, including a number and a lowercase letter.
+- Password validation based on length and character requirements.
 - Username validation allowing letters, numbers, and single hyphens between alphanumeric groups.
-- Optional email notifications checkbox.
-- Success message and redirection to the login page.
-- Responsive two-column layout with custom CSS illustrations.
-- Navigation between login and registration pages.
+- Optional product update emails.
+- Success notification and redirection to the login page.
+- GitHub-inspired benefits section with custom CSS illustrations.
+- Link back to the login page.
 
-### Design
-- Dark GitHub-inspired login page.
-- Light registration form with a dark introductory section.
+<img width="1920" height="950" alt="image" src="https://github.com/user-attachments/assets/8563117c-dde6-4927-af88-10fda923c142" />
+
+
+### 4. Design and Responsiveness
+- GitHub-inspired dark and light themes.
 - Shared CSS stylesheet for consistent styling.
-- Responsive layout for desktop, tablet, and mobile screens.
-- Hover effects, focus indicators, and styled form controls.
+- Responsive registration layout for desktop, tablet, and mobile devices.
+- Custom gradients, illustrations, hover effects, and focus indicators.
+- Styled buttons, forms, and notification cards.
 
 ## Technologies Used
 
-- **HTML5** – Page structure and forms.
-- **CSS3** – Styling, layouts, gradients, illustrations, and responsive design.
-- **JavaScript** – Form handling, input validation, and page navigation.
-- **SweetAlert2** – User-friendly popup notifications.
+- **HTML5** – Website structure and forms.
+- **CSS3** – Layouts, colors, responsive design, gradients, and illustrations.
+- **JavaScript** – Form validation, event handling, and page navigation.
+- **SweetAlert2** – Popup notifications.
 - **GitHub** – Version control and repository hosting.
+- **GitHub Pages** – Optional static website hosting.
 
 ## Project Structure
 
 ```text
 project/
+├── index.html
 ├── login.html
 ├── register.html
 ├── CSS/
@@ -51,48 +73,42 @@ project/
     └── apple.png
 ```
 
-The `images/` folder contains the logo and icons used on the pages. The `CSS/style.css` file contains the shared styles for both pages.
+- `index.html` – Landing page with the demo notice.
+- `login.html` – Login form and basic credential verification.
+- `register.html` – Registration form and input validation.
+- `CSS/style.css` – Shared styling for all pages.
+- `images/` – Logos and icons used throughout the website.
 
 ## How to Run the Project
 
-1. Download or clone the repository.
-2. Make sure the `CSS` and `images` folders are in the correct locations.
-3. Open `login.html` in a web browser.
-4. Click **Ustvari račun** (Create account) to open the registration page.
-5. Use the form to test the validation and navigation features.
+1. Clone or download the repository.
+2. Make sure all files and folders retain their original structure.
+3. Open `index.html` in a web browser.
+4. Select **Continue to login** or **Go to registration**.
+5. Test the login and registration forms.
 
-An internet connection is required to load the SweetAlert2 library from its CDN.
+An internet connection is required to load SweetAlert2 from its CDN and the external Google icon used on the login page.
 
-## Test Login Credentials
+## Limitations
 
-The login page uses hardcoded credentials for demonstration purposes.
+This project is intended for educational and demonstration purposes only.
 
-| Field | Value |
-|---|---|
-| Username | `student` |
-| Password | `Pass1234!` |
-
-Enter these credentials to display the successful login message. Any other combination displays an error message.
-
-## Important Limitations
-
-This project is a front-end demonstration and is **not a functional authentication system**.
-
-- User accounts are not stored in a database.
 - Login credentials are hardcoded in JavaScript.
-- Registration does not create a real account.
-- Google and Apple sign-in buttons are visual elements only.
-- Password recovery is not implemented.
-- Authentication and password security are not provided.
+- Registration does not create or store real user accounts.
+- Google and Apple authentication are not implemented.
+- Password recovery is not functional.
+- No database or backend server is connected.
+- Form validation does not provide real account security.
 
-For a production application, authentication should be implemented using a secure backend, a database, password hashing, and appropriate session management.
+A production-ready application would require a secure backend, database integration, password hashing, and proper authentication and session management.
 
-## Purpose of the Project
+## Purpose
 
-The purpose of this project is to practise web development fundamentals, including HTML forms, CSS styling, responsive layouts, JavaScript event handling, form validation, and navigation between web pages.
+The purpose of this project is to practise HTML, CSS, and JavaScript by recreating common authentication interfaces. It demonstrates form creation, client-side validation, responsive design, page navigation, and user notifications.
 
 ---
 
 **Project type:** Front-end web development  
 **Languages:** HTML, CSS, JavaScript  
-**Status:** Educational demonstration
+**Status:** Educational demonstration  
+**Affiliation:** Unofficial project, not affiliated with GitHub
