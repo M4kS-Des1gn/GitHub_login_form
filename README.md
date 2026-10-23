@@ -59,7 +59,7 @@ A responsive front-end website inspired by GitHub's login and registration pages
 - **GitHub** – Version control and repository hosting.
 - **GitHub Pages** – Optional static website hosting.
 
-<img width="567" height="216" alt="image" src="https://github.com/user-attachments/assets/3073d67f-9d62-4493-9df5-6c2c09239ebd" />
+<img width="520" height="294" alt="image" src="https://github.com/user-attachments/assets/b6d96033-1f8c-45ec-a812-7b3ce601a994" />
 
 
 ## Project Structure
