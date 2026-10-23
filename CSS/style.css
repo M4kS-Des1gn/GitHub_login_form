@@ -15,12 +15,19 @@ body {
     --green-hover: #2ea043;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 24px;
     color: var(--text);
     background: var(--page);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+}
+
+.page-credit {
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center
 }
 
 .authentication {
@@ -215,7 +222,7 @@ button:hover {
 .intro-lead,
 .included-heading,
 .benefit-list {
-    font-size: 12px;
+    font-size: 22px;
     line-height: 1.45
 }
 

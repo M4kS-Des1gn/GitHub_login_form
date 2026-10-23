@@ -307,17 +307,27 @@
     </section>
   </main>
 
+  <footer class="page-credit">Created by Maks Rakuša</footer>
+
   <script>
-    document.getElementById("registration-form").onsubmit = event => {
+    document.getElementById("registration-form").onsubmit = async event => {
       event.preventDefault();
 
       const password = document.getElementById("password").value;
       if (password.length < 15 && !(password.length >= 8 && /\d/.test(password) && /[a-z]/.test(password))) {
-        Swal.fire("Choose a password that meets the requirements shown above.");
+        Swal.fire({
+          icon: "error",
+          title: "Registration failed",
+          text: "Choose a password that meets the requirements shown above."
+        });
         return;
       }
 
-      Swal.fire("Registration successful! You can now sign in.");
+      await Swal.fire({
+        icon: "success",
+        title: "Registration successful",
+        text: "You can now sign in."
+      });
       window.location.href = "login.html";
     };
   </script>

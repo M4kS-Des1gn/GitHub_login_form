@@ -12,7 +12,7 @@
 
 <body>
   <main class="authentication">
-    <img src="images/httpsuxwing.comgithub-icon.png" alt="GitHub logo" class="logo">
+    <img src="images/github-white-icon.png" alt="GitHub logo" class="logo">
 
     <h1>Prijava v GitHub</h1>
 
@@ -42,7 +42,7 @@
       </button>
 
       <button type="button" class="social-button">
-        <img src="images/apple.png" alt="">
+        <img src="images/apple-xxl.png" alt="">
         Continue with Apple
       </button>
     </div>
@@ -53,6 +53,8 @@
 
   </main>
 
+  <footer class="page-credit">Created by Maks Rakuša</footer>
+
   <script>
     document.getElementById("forgot-password").onclick = event => event.preventDefault();
     document.getElementById("auth-form").onsubmit = event => {
@@ -60,7 +62,10 @@
 
       const success = document.getElementById("username").value.trim() === "student" &&
         document.getElementById("password").value === "Pass1234!";
-      Swal.fire(success ? "Prijava uspešna!" : "Prijava ni uspela. Preveri uporabniško ime in geslo.");
+      Swal.fire({
+        icon: success ? "success" : "error",
+        title: success ? "Login successful" : "Login failed"
+      });
     };
   </script>
 </body>
